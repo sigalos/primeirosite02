@@ -1,24 +1,29 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Perfil do Usuário</title>
+    <title>Aposta</title>
     <link rel="stylesheet" href="https://pyscript.net/net/alpha/pyscript.css" />
     <script defer src="https://pyscript.net/alpha/pyscript.js"></script>
 </head>
 <body>
-    <h1><py-script>
+    <p>A Lotomania é fácil de jogar e de ganhar: basta escolher 50 números
+        e então concorrer a prêmios para acertos de 20, 19, 18, 17, 16, 15
+        ou nenhum número.</p>
+    <h1>Aqui estão os 50 números aleatórios.</h1>
+    <hr>
+    <h3><py-script>
        from random import randint
     num = list()
     while True:
-        sort = randint(0, 100)
+        sort = randint(0, 99)
         if sort not in num:
             num.append(sort)
         if len(num) == 50:
             break
     print(sorted(num))
-    </py-script></h1>
+    </py-script></h3>
 </body>
 </html>
