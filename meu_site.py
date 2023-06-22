@@ -7,11 +7,13 @@ app = Flask(__name__)
 def homepage():
     return render_template("homepage.html")
 
+@app.route("/quina", methods=["post"])
+def quina():
+    return render_template("quina.html")
 
-@app.route("/contatos", methods=["post"])
-def contatos():
-    return render_template("contatos.html")
-
+@app.route("/mega", methods=["post"])
+def mega():
+    return render_template("mega.html")
 
 @app.route("/usuarios/<nome_usuario>", methods=["post"])
 def usuarios(nome_usuario):
