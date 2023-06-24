@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Aposta-QUINA</title>
+        <link rel="stylesheet" href="https://pyscript.net/net/alpha/pyscript.css" />
+        <script defer src="https://pyscript.net/alpha/pyscript.js"></script>
+    </head>
+    <style>
+        body {
+          background-color: #64b945;
+        }
+        p {color: #05199c;}
+        h2 {color: #05199c;}
+        hr {background-color: #05199c;}
+        h3 {color: #05199c;}
+    </style>
+    <body>
+
+        <div align="center">
+            <p>.Para apostar na Mega-Sena o jogador deve marcar pelo menos seis dezenas
+                entre as 60 disponíveis. Ganham prêmios os apostadores que acertarem
+                4, 5 ou 6 números.</p>
+            <hr>
+            <h2>Aqui estão os 5 números aleatórios.</h2>
+            <hr>
+            <h3>
+                <py-script>
+
+                    from random import randint
+                    num = list()
+                    while True:
+                        sort = randint(0, 60)
+                        if sort not in num:
+                            num.append(sort)
+                        if len(num) == 6:
+                            break
+                    print(sorted(num))
+
+                </py-script>
+            </h3>
+            <hr>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Aposta-QUINA</title>
+        <link rel="stylesheet" href="https://pyscript.net/net/alpha/pyscript.css" />
+        <script defer src="https://pyscript.net/alpha/pyscript.js"></script>
+    </head>
+
+    <style>
+        body {
+          background-color: #64b945;
+        }
+        p {color: #05199c;}
+        h2 {color: #05199c;}
+        hr {background-color: #05199c;}
+        h3 {color: #05199c;}
+    </style>
+    <body>
+        <div align="center">
+            <p>Como jogar. Concorra a prêmios grandiosos com a Quina: basta marcar de 5
+                a 15 números dentre os 80 disponíveis no volante e ficar na torcida.</p>
+            <hr>
+            <h2>Aqui estão os 5 números aleatórios.</h2>
+            <hr>
+                <h3>
+                    <py-script>
+
+                        from random import randint
+                        num = list()
+                        while True:
+                            sort = randint(0, 80)
+                            if sort not in num:
+                                num.append(sort)
+                            if len(num) == 5:
+                                break
+                        print(sorted(num))
+
+                    </py-script>
+                </h3>
+            <hr>
+        </div>
+    </body>
+</html>
